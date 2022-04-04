@@ -17,7 +17,7 @@ jobs:
         id: create-pr
         uses: vsoch/pull-request-action@1.0.19
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GH_TOKEN }}
           PASS_ON_ERROR: true
           PULL_REQUEST_UPDATE: false
           PULL_REQUEST_DRAFT: true
