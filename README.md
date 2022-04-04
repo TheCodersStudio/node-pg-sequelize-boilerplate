@@ -89,7 +89,9 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
 
 ## Endpoints
 
-- Create `User` with `Skills`
+<!-- Create User with Skills -->
+<details>
+    <summary>Create User with Skills</summary>
 
   ```sh
   curl --location --request POST 'localhost:3000/v1/users' \
@@ -107,72 +109,81 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
   }'
   ```
 
-- Get all `Users`
+</details>
 
-  ```sh
-  # Request
-  
-  curl --location --request GET 'localhost:3000/v1/users'
+<!-- Get all `Users` -->
+<details>
+    <summary>Get all Users</summary>
 
-  #Response
+    ```sh
+    # Request
+    
+    curl --location --request GET 'localhost:3000/v1/users'
 
-  {
-    "success": true,
-    "body": [
-      {
+    #Response
+
+    {
+      "success": true,
+      "body": [
+        {
+          "id": 1,
+          "firstName": "First1",
+          "lastName": "Last",
+          "gender": "Male",
+          "createdAt": "2022-03-20T10:11:41.860Z",
+          "updatedAt": "2022-03-20T10:11:41.860Z",
+          "skills": [
+            {
+              "id": 1,
+              "userId": 1,
+              "name": "Node.js",
+              "proficiency": "Advanced",
+              "createdAt": "2022-03-20T10:11:41.867Z",
+              "updatedAt": "2022-03-20T10:11:41.867Z"
+            }
+          ]
+        }
+      ]
+    }
+
+    ```
+
+</details>
+
+<!-- Get specific `User` by `userId` -->
+<details>
+    <summary>Get specific User by userId</summary>
+
+    ```sh
+    # Request
+
+    curl --location --request GET 'localhost:3000/v1/users/1'
+
+    # Response
+
+    {
+      "success": true,
+      "body": {
         "id": 1,
-        "firstName": "First1",
-        "lastName": "Last",
+        "firstName": "Chetan",
+        "lastName": "Patil",
         "gender": "Male",
-        "createdAt": "2022-03-20T10:11:41.860Z",
-        "updatedAt": "2022-03-20T10:11:41.860Z",
+        "createdAt": "2022-03-20T20:39:17.912Z",
+        "updatedAt": "2022-03-20T20:39:17.912Z",
         "skills": [
           {
             "id": 1,
             "userId": 1,
             "name": "Node.js",
             "proficiency": "Advanced",
-            "createdAt": "2022-03-20T10:11:41.867Z",
-            "updatedAt": "2022-03-20T10:11:41.867Z"
+            "createdAt": "2022-03-20T20:39:17.962Z",
+            "updatedAt": "2022-03-20T20:39:17.962Z"
           }
         ]
       }
-    ]
-  }
-
-  ```
-
-- Get specific `User` by `userId`
-
-  ```sh
-  # Request
-
-  curl --location --request GET 'localhost:3000/v1/users/1'
-
-  # Response
-
-  {
-    "success": true,
-    "body": {
-      "id": 1,
-      "firstName": "Chetan",
-      "lastName": "Patil",
-      "gender": "Male",
-      "createdAt": "2022-03-20T20:39:17.912Z",
-      "updatedAt": "2022-03-20T20:39:17.912Z",
-      "skills": [
-        {
-          "id": 1,
-          "userId": 1,
-          "name": "Node.js",
-          "proficiency": "Advanced",
-          "createdAt": "2022-03-20T20:39:17.962Z",
-          "updatedAt": "2022-03-20T20:39:17.962Z"
-        }
-      ]
     }
-  }
-  ```
+    ```
+</details>
 
 ## References
 
