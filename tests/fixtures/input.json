@@ -1,0 +1,18 @@
+{
+  "valid": {
+    "firstName": "Chetan",
+    "lastName": "Patil",
+    "gender": "Male",
+    "skills": [
+      {
+        "name": "Node.js",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  "schemaError": {
+    "firstNames": "Chetan",
+    "lastName": "Patil",
+    "gender": "Male"
+  }
+}

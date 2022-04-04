@@ -1,0 +1,46 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "google", "airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["import"],
+  "rules": {
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "max-len": [
+      "error",
+      100,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": false,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "import/extensions": [
+      "error",
+      {
+          "js": "ignorePackages"
+      }
+  ]
+  },
+  "overrides": [
+    {
+        "files": ["*.test.js", "*.spec.js"],
+        "rules": {
+            "no-unused-expressions": "off"
+        }
+    }
+]
+}

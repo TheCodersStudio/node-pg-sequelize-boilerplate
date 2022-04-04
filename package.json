@@ -1,0 +1,64 @@
+{
+  "name": "pg-sequelize",
+  "version": "1.0.0",
+  "description": "Node PostgreSQL Sequelize boilerplate",
+  "main": "./src/server.js",
+  "exports": "./src/server.js",
+  "scripts": {
+    "start": "npm run migration && node src/server.js",
+    "local": "npm run migration && nodemon src/server.js",
+    "test": "npm run migration && NODE_ENV=test mocha tests/*  -r dotenv/config --timeout 1000 --recursive --exit",
+    "migration": "npx sequelize-cli db:migrate",
+    "migration:undo": "npx sequelize-cli db:migrate:undo",
+    "coverage": "c8 --reporter lcov --reporter text --reporter html npm test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "author": "chetan0779@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "cls-hooked": "^4.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "express-json-validator-middleware": "^2.2.1",
+    "helmet": "^5.0.2",
+    "http-status": "^1.5.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.18.0",
+    "stoppable": "^1.1.0",
+    "winston": "^3.6.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "mocha": "^9.2.2",
+    "mochawesome": "^7.1.3",
+    "nyc": "^15.1.0",
+    "supertest": "^6.2.2"
+  },
+  "c8": {
+    "all": true,
+    "include": [
+      "src/*"
+    ],
+    "exclude": [
+      "src/config/*",
+      "src/middlewares/*",
+      "src/utils/*"
+    ],
+    "check-coverage": true,
+    "branches": 80,
+    "lines": 80,
+    "functions": 80,
+    "statements": 80
+  }
+}

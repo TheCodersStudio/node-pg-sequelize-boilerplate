@@ -1,0 +1,32 @@
+name: Automatic draft PR
+
+on:
+  push:
+    branches:
+      - feature/**
+      - fix/**
+      - feat/**
+      - chore/**
+
+jobs:
+  auto-pull-request:
+    name: Create or update draft pull request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create or update pull request
+        id: create-pr
+        uses: vsoch/pull-request-action@1.0.19
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PASS_ON_ERROR: true
+          PULL_REQUEST_UPDATE: false
+          PULL_REQUEST_DRAFT: true
+          PULL_REQUEST_ASSIGNEES: ${{ github.actor }}
+          PULL_REQUEST_BRANCH: main
+          PULL_REQUEST_TITLE: '${{ github.ref_name }}: Merge into main'
+          PULL_REQUEST_BODY: |
+            > This PR is auto created, please update PR Title and body as per your need.
+            
+            ## Description
+
+            Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.

@@ -1,0 +1,33 @@
+repository:
+  # See https://developer.github.com/v3/repos/#edit for all available settings.
+  name: node-pg-sequelize
+  description: Boilerplate code for Node PostgreSQL Sequelize with unit/integration test setup
+  topics: nodejs, boilerplate, postgresql, sequelize
+  visibility: public
+  has_issues: true
+  has_projects: false
+  has_wiki: true
+  has_downloads: true
+  default_branch: main
+  delete_branch_on_merge: true
+  allow_squash_merge: true
+  allow_merge_commit: true
+  allow_rebase_merge: true
+
+labels:
+  - name: maintenance
+    color: 6BA890
+    description: General repo maintenance / configuration
+  - name: ci
+    color: E8A4BC
+    description: Changes related to automation
+  ## Service related
+  - name: source-code
+    color: aaa1c7
+    description: Changes made to the Source Code
+  - name: tests
+    color: 695a99
+    description: Changes made to Tests
+  - name: docker
+    color: 1a8f25
+    description: Changes made to Dockerfile

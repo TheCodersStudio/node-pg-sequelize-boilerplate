@@ -1,0 +1,35 @@
+name: "Setup Node and Caching"
+description: "Setup a Node environment and restore cache if any"
+
+outputs:
+  cache-hit:
+    description: Variable defining wheather cache found or not
+    value: ${{ steps.cache-node-modules.outputs.cache-hit }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Cache node modules
+      id: cache-nodemodules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
+      with:
+        # caching node_modules
+        path: node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
+    - name: Install Dependencies
+      id: install-dep
+      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+      shell: sh
+      run: npm ci

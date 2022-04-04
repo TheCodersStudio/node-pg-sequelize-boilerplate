@@ -1,0 +1,4 @@
+# ignore
+
+.vscode/**/*
+mochawesome-report/
