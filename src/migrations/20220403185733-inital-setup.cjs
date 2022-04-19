@@ -49,11 +49,8 @@ const models = {
 module.exports = {
   up: async (queryInterface) => {
     await queryInterface.sequelize.transaction(async (transaction) => {
-      const tablePromises = tableNames.map(async table => {
-        await queryInterface.createTable(table, models[table], { transaction });
-      });
-
-      await Promise.all(tablePromises);
+      await queryInterface.createTable('user', models.user, { transaction });
+      await queryInterface.createTable('skill', models.skill, { transaction });
     });
   },
 
