@@ -5,9 +5,11 @@ import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
 import { fileURLToPath } from 'url';
+import swaggerUi from 'swagger-ui-express';
 
 import { badJsonHandler, notFoundHandler, errorHandler } from './middlewares/index.js';
 import { Logger } from './config/logger.js';
+import { swaggerSpec } from './config/swagger-config.js';
 
 import healthRoute from './routes/health.route.js';
 import v1Routes from './routes/v1/index.js';
@@ -15,6 +17,8 @@ import v1Routes from './routes/v1/index.js';
 const logger = Logger(fileURLToPath(import.meta.url));
 
 const app = express();
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // disable `X-Powered-By` header that reveals information about the server
 app.disable('x-powered-by');

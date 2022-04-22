@@ -1,3 +1,9 @@
+/**
+ * Config details
+ *
+ * @author Chetan Patil
+ *
+ */
 import 'dotenv/config';
 
 export default {

@@ -4,6 +4,13 @@
 import httpStatus from 'http-status';
 
 class APIError extends Error {
+  /**
+   *
+   * @constructor
+   *
+   * @param {number} status - HTTP status code representing error type
+   * @param {string} message - Error message describing cause of error
+   */
   constructor(status, message) {
     super();
     this.status = status;
@@ -53,6 +60,9 @@ const apiErrors = Object.entries({
   return map;
 }, {});
 
+/**
+ * API Error class which holds different kind of error types
+ */
 export default {
   ...apiErrors,
   APIError,

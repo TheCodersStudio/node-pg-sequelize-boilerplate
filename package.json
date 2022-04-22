@@ -12,7 +12,12 @@
     "migration:undo": "npx sequelize-cli db:migrate:undo",
     "coverage": "c8 --reporter lcov --reporter text --reporter html npm test",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "esdoc": "esdoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chetan07j/node-pg-sequelize.git"
   },
   "author": "chetan0779@gmail.com",
   "license": "ISC",
@@ -21,6 +26,10 @@
     "cls-hooked": "^4.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
+    "esdoc": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-integrate-test-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "express": "^4.17.3",
     "express-async-errors": "^3.1.1",
     "express-json-validator-middleware": "^2.2.1",
@@ -31,6 +40,8 @@
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.29.0",
     "stoppable": "^1.1.0",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.3.0",
     "winston": "^3.7.2"
   },
   "type": "module",
