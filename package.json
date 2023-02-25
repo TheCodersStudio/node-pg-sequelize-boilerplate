@@ -29,7 +29,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.19.0",
+    "sequelize": "^6.29.0",
     "stoppable": "^1.1.0",
     "winston": "^3.7.2"
   },
