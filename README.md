@@ -1,6 +1,19 @@
-# Node-Express-Sequelize-API Boilerplate
+# Node-Express-Sequelize-API Boilerplate <!-- omit in toc -->
 
 Simple boilerplate code base for creating APIs with `Node.js Express` framework using `Sequelize` with `PostgreSQL` database.
+
+## Contents <!-- omit in toc -->
+
+- [Includes](#includes)
+- [Prerequisite](#prerequisite)
+- [Getting Started](#getting-started)
+- [Local Setup](#local-setup)
+- [Tests \& Coverage](#tests--coverage)
+- [Migrations](#migrations)
+- [Environment Variables](#environment-variables)
+- [`ESDoc`](#esdoc)
+- [Endpoints](#endpoints)
+- [References](#references)
 
 ## Includes
 
@@ -86,6 +99,11 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
 | DB_PASS  | Database password        | `postgres`    |
 
 > NOTE: These environment variables are already passed to `npm run local` and `npm test` scripts under `package.json` with their default values. You can update as per your need.
+
+## `ESDoc`
+
+- Documention is created out of comments added for functions using `esdoc`.
+- That documentaion is avaialbe as GH Pages site, can be found [here](https://chetan07j.github.io/node-pg-sequelize-boilerplate/).
 
 ## Endpoints
 
