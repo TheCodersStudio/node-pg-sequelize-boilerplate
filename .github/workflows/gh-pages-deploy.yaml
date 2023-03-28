@@ -4,10 +4,10 @@ name: Deploy ESDoc Documentation to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [$default-branch]
+    branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  # # Allows you to run this workflow manually from the Actions tab
+  # workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
