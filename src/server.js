@@ -39,18 +39,12 @@ process.on('uncaughtException', async uncaughtExc => {
   await gracefulShutdown(stoppable(server));
 });
 
-// quit on ctrl+c
-process.on('SIGINT', async () => {
-  logger.warn('Got SIGINT (aka ctrl+c). Graceful shutdown');
-
-  await gracefulShutdown(stoppable(server));
-});
-
-// quit properly
-process.on('SIGTERM', async () => {
-  logger.warn('Got SIGTERM => Graceful shutdown');
-
-  await gracefulShutdown(stoppable(server));
+// Graceful shutdown on SIGINT and SIGTERM signals
+['SIGINT', 'SIGTERM'].forEach(signal => {
+  process.on(signal, async () => {
+    logger.warn(`Received ${signal} signal. Shutting down...`);
+    await gracefulShutdown(server);
+  });
 });
 
 export default server;

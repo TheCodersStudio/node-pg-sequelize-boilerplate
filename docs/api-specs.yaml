@@ -1,0 +1,132 @@
+openapi: 3.0.3
+info:
+  title: Express API for User Profile
+  version: 1.0.0
+  description: >-
+    Simple boilerplate code base for creating APIs with `Node.js Express`
+    framework using `Sequelize` with `PostgreSQL` database.
+  contact:
+    name: Chetan Patil
+    url: https://github.com/Chetan07j
+servers:
+  - url: http://localhost:3000
+    description: Development server
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      description: Health Endpoint
+      responses:
+        '200':
+          description: Application helath details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uptime:
+                    type: number
+                    format: float
+                    description: >-
+                      Time (in seconds) specifying apllication running from how
+                      long
+                  message:
+                    type: string
+                    description: Status message ok
+                  date:
+                    type: string
+                    format: date-time
+                    description: Current date in ISO format
+  /v1/users:
+    post:
+      tags:
+        - v1
+      description: Endpoint to create/add new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '200':
+          description: Application helath details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateUserSuccess'
+components:
+  schemas:
+    Skills:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Skill name.
+          example: JavaScript
+        proficiency:
+          type: string
+          description: Skill proficiency level.
+          enum:
+            - Beginer
+            - Intermediate
+            - Advanced
+    User:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: The user's first/given name.
+          example: Chetan
+        lastName:
+          type: string
+          description: The user's surname/family name.
+          example: Patil
+        gender:
+          type: string
+          enum:
+            - Male
+            - Female
+            - Other
+    CreateUserRequest:
+      allOf:
+        - $ref: '#/components/schemas/User'
+        - type: object
+          properties:
+            skills:
+              type: array
+              items:
+                $ref: '#/components/schemas/Skills'
+    CreateUserSuccess:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Flag stating status of API call
+          example: true
+        body:
+          allOf:
+            - $ref: '#/components/schemas/User'
+            - type: object
+              properties:
+                id:
+                  type: number
+                  description: Id generated for created user.
+                  example: 1
+                skills:
+                  type: array
+                  items:
+                    allOf:
+                      - type: object
+                        properties:
+                          id:
+                            type: number
+                            description: Id generated for created skill.
+                            example: 1
+                          userId:
+                            type: number
+                            description: Id generated for created user.
+                            example: 1
+                      - $ref: '#/components/schemas/Skills'
+tags: []

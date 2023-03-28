@@ -1,3 +1,13 @@
+/**
+ * Model class for "skill"
+ *
+ * @author Chetan Patil
+ *
+ * @param {Sequelize} sequelize - sequelize object
+ * @param {Sequelize.DataTypes} DataTypes - sequelize datatypes
+ *
+ * @returns Skill - sequelize model
+ */
 export default (sequelize, DataTypes) => {
   const Skill = sequelize.define('Skill', {
     id: {

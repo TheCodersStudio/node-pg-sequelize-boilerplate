@@ -112,3 +112,5 @@ mochawesome-report/
 
 # lock files
 yarn.lock
+
+doc/
