@@ -8,7 +8,7 @@ const router = express.Router();
 const { validate } = new Validator();
 
 /**
- * @swagger
+ * @openapi
  * components:
  *   schemas:
  *     Skills:
@@ -36,7 +36,7 @@ const { validate } = new Validator();
  *         gender:
  *           type: string
  *           enum: [Male, Female, Other]
- * 
+ *
  *     CreateUserRequest:
  *       allOf:
  *       - $ref: '#/components/schemas/User'
@@ -46,7 +46,7 @@ const { validate } = new Validator();
  *             type: array
  *             items:
  *               $ref: '#/components/schemas/Skills'
- * 
+ *
  *     CreateUserSuccess:
  *       type: object
  *       properties:
@@ -100,7 +100,7 @@ const { validate } = new Validator();
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/CreateUserSuccess'
- *  
+ *
  */
 router
   .route('/')
