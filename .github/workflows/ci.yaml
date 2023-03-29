@@ -51,3 +51,15 @@ jobs:
           DB_NAME: postgres
           DB_USER: postgres
           DB_PASS: postgres
+  
+  sql-check:
+    name: SQL Check
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: yokawasa/action-sqlcheck@v1.4.0
+      with:
+        post-comment: true
+        risk-level: 2
+        verbose: true
+        token: ${{ secrets.GITHUB_TOKEN }}
