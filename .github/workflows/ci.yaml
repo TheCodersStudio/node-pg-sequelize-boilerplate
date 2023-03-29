@@ -61,5 +61,8 @@ jobs:
       with:
         post-comment: true
         risk-level: 2
-        verbose: true
+        verbose: false
         token: ${{ secrets.GITHUB_TOKEN }}
+        postfixes: |
+          sql
+          cjs

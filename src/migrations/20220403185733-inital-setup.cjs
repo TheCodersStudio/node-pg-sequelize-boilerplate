@@ -33,6 +33,8 @@ module.exports = {
               ON UPDATE NO ACTION
               ON DELETE NO ACTION
       );
+
+      SELECT * FROM user;
     `);
   },
 
