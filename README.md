@@ -213,6 +213,6 @@ Contributions are welcome! Feel free to open an issue or submit a pull request i
 
 Make sure your request is meaningful and you have tested the app locally before submitting a pull request.
 
-## 🙋‍♂️ Support
+## ♥️ Support
 
 💙 If you like this project, give it a ⭐
