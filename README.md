@@ -2,7 +2,7 @@
 
 Simple boilerplate code base for creating APIs with `Node.js Express` framework using `Sequelize` with `PostgreSQL` database.
 
-## Contents <!-- omit in toc -->
+## 📚 Contents <!-- omit in toc -->
 
 - [Includes](#includes)
 - [Prerequisite](#prerequisite)
@@ -24,7 +24,7 @@ Simple boilerplate code base for creating APIs with `Node.js Express` framework 
 - `Eslint`
 - `winston` logger
 
-## Prerequisite
+## 😊 Prerequisite
 
 - Install `nodemon` globally using below command if not installed already
 
@@ -34,7 +34,7 @@ Simple boilerplate code base for creating APIs with `Node.js Express` framework 
 
 - **PostgreSQL**
 
-## Getting Started
+## 🚀 Getting Started
 
 You can download or clone this repo using below command:
 
@@ -42,7 +42,7 @@ You can download or clone this repo using below command:
 git clone git@github.com:Chetan07j/node-pg-sequelize.git
 ```
 
-## Local Setup
+## ⚙️ Local Setup
 
 - After cloning enter into folder.
 - Install dependencies
@@ -60,7 +60,7 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
   npm run local
   ```
 
-## Tests & Coverage
+## 🧪 Tests & Coverage
 
 - Run tests *(unit/integration)*
 
@@ -74,7 +74,7 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
   npm run coverage
   ```
 
-## Migrations
+## 🗃️ Migrations
 
 - Running Migrations
 
@@ -88,7 +88,7 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
   npm run migration:undo
   ```
 
-## Environment Variables
+## ℹ️ Environment Variables
 
 | Variable | Description              | Default Value |
 | -------- | ------------------------ | ------------- |
@@ -100,12 +100,12 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
 
 > NOTE: These environment variables are already passed to `npm run local` and `npm test` scripts under `package.json` with their default values. You can update as per your need.
 
-## `ESDoc`
+## 🗒️ `ESDoc`
 
 - Documention is created out of comments added for functions using `esdoc`.
 - That documentaion is avaialbe as GH Pages site, can be found [here](https://chetan07j.github.io/node-pg-sequelize-boilerplate/).
 
-## Endpoints
+## ✴️ Endpoints
 
 <!-- Create User with Skills -->
 <details>
@@ -203,6 +203,16 @@ git clone git@github.com:Chetan07j/node-pg-sequelize.git
     ```
 </details>
 
-## References
+## 📚 References
 
 - [Sequelize ORM](https://sequelize.org/v6/)
+
+## 🤗 Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.
+
+Make sure your request is meaningful and you have tested the app locally before submitting a pull request.
+
+## 🙋‍♂️ Support
+
+💙 If you like this project, give it a ⭐
