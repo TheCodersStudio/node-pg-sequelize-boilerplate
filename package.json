@@ -42,7 +42,7 @@
     "sequelize": "^6.32.1",
     "stoppable": "^1.1.0",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^4.6.2",
+    "swagger-ui-express": "^5.0.0",
     "winston": "^3.8.2"
   },
   "type": "module",
