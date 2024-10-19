@@ -30,7 +30,7 @@
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-integrate-test-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "express-async-errors": "^3.1.1",
     "express-json-validator-middleware": "^3.0.1",
     "helmet": "^7.1.0",
